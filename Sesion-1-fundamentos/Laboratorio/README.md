@@ -71,7 +71,7 @@ Azure exige que ciertos nombres (Storage Account, Web App, Key Vault) sean **glo
 
 ## 🗂️ Estructura de esta guía
 
-```
+```text
 lab-sesion1-fundamentos-cloud/
 ├── README.md                          ← estás aquí
 ├── 01-threat-modeling/README.md       → Threat Modeling con OWASP Threat Dragon
@@ -79,8 +79,7 @@ lab-sesion1-fundamentos-cloud/
 ├── 03-exploracion-portal/README.md    → Exploración del Portal de Azure
 ├── 04-arm-resource-groups/README.md   → Azure Resource Manager / Resource Groups
 ├── 05-mapeo-responsabilidades/README.md → Mapeo de responsabilidades por servicio
-├── 06-managed-identity/README.md      → Managed Identity: App Service → Storage + Key Vault
-└── assets/                            → plantillas y diagramas de apoyo
+└── 06-managed-identity/README.md      → Managed Identity: App Service → Storage + Key Vault
 ```
 
 Sigue las secciones **en este orden**: el modelo de amenazas de la Sección 1 describe la misma arquitectura que construirás en la Sección 6, y las secciones 2 a 5 preparan el terreno (cuenta, portal, organización de recursos y responsabilidades) antes de construir nada.
