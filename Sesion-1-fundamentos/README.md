@@ -70,9 +70,10 @@ sesion-1-fundamentos-cloud-computing/
 
 Sigue este orden para aprovechar la sesión correctamente:
 
-1. **Revisa la presentación** (`presentacion/Sesion1_Fundamentos_Cloud_Security.pptx`) durante o antes del bloque teórico. Cubre los 6 bloques temáticos listados arriba, con ejemplos aplicados y referencias cruzadas a las sesiones siguientes del módulo.
-2. **Sigue la guía de laboratorio** en orden, comenzando por [`laboratorio/lab-sesion1-fundamentos-cloud/README.md`](laboratorio/lab-sesion1-fundamentos-cloud/README.md). El laboratorio modela primero la amenaza (Sección 1 del lab) y luego construye la arquitectura real que la mitiga (Secciones 2 a 6) — por eso el orden de las secciones importa.
-3. **Consulta la rúbrica antes de entregar** en [`laboratorio/lab-sesion1-fundamentos-cloud/RUBRICA-EVALUACION.md`](laboratorio/lab-sesion1-fundamentos-cloud/RUBRICA-EVALUACION.md).
+1. **Revisa la** [`Presentación`](./Presentación/Sesion1_Fundamentos_Cloud_Security.pptx) durante o antes del bloque teórico. Cubre los 6 bloques temáticos listados arriba, con ejemplos aplicados y referencias cruzadas a las sesiones siguientes del módulo.
+2. **Sigue la guía de laboratorio** en orden, comenzando por [`Laboratorio/README.md`](./Laboratorio/README.md). El laboratorio modela primero la amenaza (Sección 1 del lab) y luego construye la arquitectura real que la mitiga (Secciones 2 a 6) — por eso el orden de las secciones importa.
+3. **Consulta la rúbrica antes de entregar** en [`Laboratorio/RUBRICA-EVALUACION.md`](./Laboratorio/RUBRICA-EVALUACION.md).
+
 
 ---
 
@@ -86,7 +87,7 @@ Sigue este orden para aprovechar la sesión correctamente:
 
 **Peso de esta evidencia:** 20 % de la nota del módulo.
 
-> ⚠️ **La entrega del laboratorio se realiza únicamente en formato PDF, cargado en Google Classroom.** No se reciben archivos en ningún otro formato. Todo el detalle está en la [Rúbrica de Evaluación](laboratorio/lab-sesion1-fundamentos-cloud/RUBRICA-EVALUACION.md).
+> ⚠️ **La entrega del laboratorio se realiza únicamente en formato PDF, cargado en Google Classroom.** No se reciben archivos en ningún otro formato. Todo el detalle está en la [Rúbrica de Evaluación](./Laboratorio/RUBRICA-EVALUACION.md).
 
 ---
 
@@ -94,7 +95,7 @@ Sigue este orden para aprovechar la sesión correctamente:
 
 - Conocimientos básicos de fundamentos de TI y de seguridad de la información (redes, sistemas operativos, principios de confidencialidad-integridad-disponibilidad).
 - No se requiere experiencia previa con proveedores cloud.
-- Para el laboratorio: cuenta de correo, número de teléfono propio, y una tarjeta débito o crédito no prepago (solo para verificación de identidad de la cuenta Azure Free Tier — no se genera ningún cobro). Ver el detalle completo en el [README del laboratorio](laboratorio/lab-sesion1-fundamentos-cloud/README.md#✅-prerrequisitos).
+- Para el laboratorio: cuenta de correo, número de teléfono propio, y una tarjeta débito o crédito no prepago (solo para verificación de identidad de la cuenta Azure Free Tier — no se genera ningún cobro). Ver el detalle completo en el [README del laboratorio](./Laboratorio/README.md).
 
 ---
 
