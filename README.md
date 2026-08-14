@@ -52,7 +52,7 @@ Audiencia mixta: perfiles de TI con poca exposición a seguridad y perfiles de s
 
 | Sesión | Tema | HTA | HTI | Laboratorio |
 |---|---|---|---|---|
-| 1 | Fundamentos de Cloud Computing, Responsabilidad Compartida y Principios de Seguridad | 7 h | 13 h | Threat Modeling + Managed Identity |
+| 1 | [Fundamentos de Cloud Computing, Responsabilidad Compartida y Principios de Seguridad](./Sesion-1-fundamentos/README.md) | 7 h | 13 h | Threat Modeling + Managed Identity |
 | 2 | Gobernanza, Riesgo, Cumplimiento y Arquitectura Segura | 7 h | 13 h | CSPM con Prowler y CloudSploit |
 | 3 | Seguridad de Datos e Identidad y Acceso (IAM) | 6 h | 13 h | IAM, cifrado y federación de identidad |
 | 4 | Seguridad de Infraestructura, Redes y Acceso Privado | 6 h | 13 h | Red segura + PaaS + WAF |
