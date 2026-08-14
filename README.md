@@ -1,6 +1,6 @@
 # ☁️ Ciberseguridad en la Nube
 
-**Especialización en Seguridad Física y de la Informática — Escuela de Comunicaciones Militares (ESCOM)**
+**Especialización en Ciberseguridad — Escuela de Comunicaciones Militares (ESCOM)**
 
 Curso de especialización en modalidad **híbrida** (presencial + virtual) enfocado en el diseño, implementación y operación de controles de seguridad en entornos de cómputo en la nube, con laboratorios prácticos sobre **Microsoft Azure**.
 
@@ -194,4 +194,4 @@ Cada laboratorio equivale al **20%** de la nota final (5 sesiones × 20% = 100%)
 ---
 
 **Docente:** Manuel Alejandro Vargas Rojas · [manuelvargasrojas@cedoc.edu.co](mailto:manuelvargasrojas@cedoc.edu.co)
-**Institución:** Escuela de Comunicaciones Militares (ESCOM) — Especialización en Seguridad Física y de la Informática
+**Institución:** Escuela de Comunicaciones Militares (ESCOM) — Especialización en Ciberseguridad
