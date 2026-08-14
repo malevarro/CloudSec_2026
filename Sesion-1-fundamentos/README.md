@@ -46,7 +46,7 @@ Estos objetivos corresponden directamente al resultado de aprendizaje del syllab
 
 ## 🗃️ Estructura de este repositorio
 
-```
+```text
 sesion-1-fundamentos-cloud-computing/
 ├── README.md                              ← estás aquí
 ├── presentacion/
@@ -60,8 +60,7 @@ sesion-1-fundamentos-cloud-computing/
         ├── 03-exploracion-portal/         → Exploración del Portal de Azure
         ├── 04-arm-resource-groups/        → Azure Resource Manager / Resource Groups
         ├── 05-mapeo-responsabilidades/    → Mapeo de responsabilidades por servicio
-        ├── 06-managed-identity/           → Managed Identity: App Service → Storage + Key Vault
-        └── assets/                        → Plantillas y modelos de amenazas generados
+        └── 06-managed-identity/           → Managed Identity: App Service → Storage + Key Vault
 ```
 
 ---
