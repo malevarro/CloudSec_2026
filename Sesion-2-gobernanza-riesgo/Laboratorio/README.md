@@ -21,7 +21,8 @@ Laboratorio-2-Gobernanza-Riesgo-CSPM/
 ├── 05-cspm-cloudsploit.md                 ← Parte 5: CSPM con CloudSploit
 ├── 06-consolidacion-informe.md            ← Parte 6: informe final + entregable
 ├── 07-limpieza-recursos.md                ← Parte 7: limpieza (obligatoria)
-└── 08-solucion-problemas.md               ← Troubleshooting de todo el laboratorio
+├── 08-solucion-problemas.md               ← Troubleshooting de todo el laboratorio
+└── 09-rubrica-evaluacion.md               ← Rúbrica de evaluación (cómo se califica)
 ```
 
 ## 🧭 Tabla de contenido / orden de navegación
@@ -37,6 +38,7 @@ Laboratorio-2-Gobernanza-Riesgo-CSPM/
 | 6 | [Parte 6 · Consolidación: informe de gobernanza y riesgo](06-consolidacion-informe.md) | Armar el entregable final |
 | 7 | [Parte 7 · Limpieza de recursos (obligatorio en Free Tier)](07-limpieza-recursos.md) | Eliminar todo lo creado para evitar cargos |
 | — | [Solución de problemas frecuentes](08-solucion-problemas.md) | Consulta en cualquier momento si algo falla |
+| — | [📊 Rúbrica de evaluación](09-rubrica-evaluacion.md) | Cómo se califica tu entrega — léela antes de empezar |
 
 Cada archivo de sección incluye, al final, **preguntas de repaso** y, a lo largo del texto, recuadros 📸 que indican exactamente qué captura de pantalla tomar en cada momento — ambas cosas alimentan directamente el informe final. También incluye una barra de navegación (⬅️ Anterior · 🏠 README · Siguiente ➡️) para avanzar sin tener que volver aquí cada vez.
 
@@ -163,7 +165,9 @@ Ejemplo si tu usuario es `jvargas`:
 
 ## 📄 Formato de entrega
 
-> ⚠️ Este laboratorio se entrega como **un único archivo PDF**, cargado en **Google Classroom**. No se aceptan archivos sueltos, capturas individuales, ni formatos distintos a PDF. El detalle completo — checklist de capturas, checklist de preguntas de repaso, y pasos de subida a Classroom — está en **[Parte 6 — Entregable final](06-consolidacion-informe.md#entregable-final)**.
+> ### 🛑 La entrega se realiza ÚNICAMENTE en un documento PDF, cargado en la plataforma de Google Classroom dispuesta para ello. No se reciben archivos de ningún otro formato.
+
+El detalle completo — checklist de capturas, checklist de preguntas de repaso, y pasos de subida a Classroom — está en **[Parte 6 — Entregable final](06-consolidacion-informe.md#entregable-final)**. La forma exacta en que se califica cada parte de esa entrega está en la **[📊 Rúbrica de evaluación](09-rubrica-evaluacion.md)** — léela antes de empezar el laboratorio, no al final.
 
 ---
 

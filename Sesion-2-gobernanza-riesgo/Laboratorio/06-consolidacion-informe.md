@@ -1,8 +1,8 @@
-[🏠 README — Laboratorio 2](README.md) · Sección 6 de 8
+[🏠 README — Laboratorio 2](README.md) · Sección 6 de 9
 
 ## Parte 6 — Consolidación: informe de gobernanza y riesgo
 
-> ⚠️ **Formato de entrega obligatorio:** este laboratorio se entrega en **un único archivo PDF**, cargado en **Google Classroom**. No se aceptan carpetas comprimidas, múltiples archivos sueltos, ni formatos distintos a PDF. La sección [Entregable final](#entregable-final) de más abajo detalla exactamente cómo armarlo.
+> ⚠️ **Formato de entrega obligatorio:** este laboratorio se entrega en **un único archivo PDF**, cargado en **Google Classroom**. No se aceptan carpetas comprimidas, múltiples archivos sueltos, ni formatos distintos a PDF. La sección [Entregable final](#entregable-final) de más abajo detalla exactamente cómo armarlo, y la [📊 Rúbrica de evaluación](09-rubrica-evaluacion.md) detalla exactamente cómo se califica.
 
 Con los resultados de las Partes 0 a 5, construye un único documento que se convertirá en tu PDF final. Debe contener, en este orden:
 
@@ -95,6 +95,8 @@ No importa qué herramienta uses para redactar (Word, Google Docs, Markdown expo
 > ⚠️ **No se aceptan:** enlaces a Google Drive sin permisos de acceso, archivos `.docx`/`.zip`/`.rar`, múltiples archivos separados, ni el reporte HTML de Prowler o el CSV de CloudSploit como archivos independientes — todo ese contenido (como capturas de pantalla) debe estar **dentro** del único PDF.
 
 > ✅ **Antes de subir, verifica:** ¿el PDF abre correctamente en otro dispositivo? ¿están las 27-28 capturas visibles y legibles (no cortadas ni en baja resolución)? ¿respondiste las 32 preguntas de repaso? ¿incluiste la reflexión final?
+
+> 📊 Revisa la **[Rúbrica de evaluación](09-rubrica-evaluacion.md)** antes de entregar — te muestra exactamente cómo se distribuyen los 100 puntos de la calificación.
 
 ---
 
