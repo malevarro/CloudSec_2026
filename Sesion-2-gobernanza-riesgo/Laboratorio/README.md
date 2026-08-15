@@ -38,7 +38,7 @@ Laboratorio-2-Gobernanza-Riesgo-CSPM/
 | 7 | [Parte 7 · Limpieza de recursos (obligatorio en Free Tier)](07-limpieza-recursos.md) | Eliminar todo lo creado para evitar cargos |
 | — | [Solución de problemas frecuentes](08-solucion-problemas.md) | Consulta en cualquier momento si algo falla |
 
-Cada archivo de sección incluye, al final, una barra de navegación (⬅️ Anterior · 🏠 README · Siguiente ➡️) para avanzar sin tener que volver aquí cada vez.
+Cada archivo de sección incluye, al final, **preguntas de repaso** y, a lo largo del texto, recuadros 📸 que indican exactamente qué captura de pantalla tomar en cada momento — ambas cosas alimentan directamente el informe final. También incluye una barra de navegación (⬅️ Anterior · 🏠 README · Siguiente ➡️) para avanzar sin tener que volver aquí cada vez.
 
 ---
 
@@ -61,7 +61,7 @@ El laboratorio se desarrolla en **cinco partes secuenciales**, cada una construi
 
 > Evalúa el cumplimiento normativo y el riesgo de un entorno cloud utilizando marcos de gobernanza y herramientas CSPM.
 
-**Entregable:** informe de gobernanza/riesgo con marcos CSA + reporte CSPM (Prowler y CloudSploit) con hallazgos priorizados. Ver la sección [Entregable final](06-consolidacion-informe.md#entregable-final).
+**Entregable:** informe de gobernanza/riesgo con marcos CSA + reporte CSPM (Prowler y CloudSploit) con hallazgos priorizados. Se entrega como **un único archivo PDF cargado en Google Classroom** — ver la sección [Entregable final](06-consolidacion-informe.md#entregable-final) para el detalle completo.
 
 ---
 
@@ -157,9 +157,13 @@ Ejemplo si tu usuario es `jvargas`:
 ## 🚀 Cómo empezar
 
 1. Lee completa la sección **"Antes de empezar: restricciones de la cuenta Free Tier"** más arriba — evitarás cargos inesperados en tu cuenta.
-2. Continúa con **[Parte 0 — Preparación del entorno](00-preparacion-entorno.md)** y sigue en orden hasta la Parte 7.
+2. Continúa con **[Parte 0 — Preparación del entorno](00-preparacion-entorno.md)** y sigue en orden hasta la Parte 7. Toma cada captura de pantalla 📸 en el momento indicado y responde las preguntas de repaso al final de cada sección — las necesitarás todas para el informe final.
 3. Si algo falla en el camino, consulta **[Solución de problemas frecuentes](08-solucion-problemas.md)**.
 4. Al finalizar, no olvides ejecutar **[Parte 7 — Limpieza de recursos](07-limpieza-recursos.md)**.
+
+## 📄 Formato de entrega
+
+> ⚠️ Este laboratorio se entrega como **un único archivo PDF**, cargado en **Google Classroom**. No se aceptan archivos sueltos, capturas individuales, ni formatos distintos a PDF. El detalle completo — checklist de capturas, checklist de preguntas de repaso, y pasos de subida a Classroom — está en **[Parte 6 — Entregable final](06-consolidacion-informe.md#entregable-final)**.
 
 ---
 

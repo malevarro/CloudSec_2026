@@ -38,6 +38,16 @@ Por último, **desactiva Foundational CSPM** si no vas a seguir usando Defender 
 
 ✅ **Checkpoint final:** en el portal, busca "Grupos de recursos" y confirma que `rg-lab2-jvargas` ya no aparece en la lista (puede tardar unos minutos en desaparecer).
 
+> 📸 **Captura para el informe — 7.1:** la lista de "Grupos de recursos" del portal **sin** `rg-lab2-jvargas`, como evidencia de la limpieza completa.
+
+---
+
+## Preguntas de repaso
+
+1. ¿Por qué es importante eliminar el Service Principal en Microsoft Entra ID y no solo los recursos de Azure?
+2. Si olvidas ejecutar esta limpieza, ¿qué recursos de este laboratorio podrían generar algún tipo de costo o riesgo de seguridad si quedan activos indefinidamente?
+3. ¿Por qué el orden de los comandos de limpieza importa (por ejemplo, eliminar el Deployment Stack antes que el grupo de recursos)?
+
 ---
 
 ⬅️ Anterior: [Parte 6 · Consolidación: informe de gobernanza y riesgo](06-consolidacion-informe.md) · 🏠 [README](README.md) · Siguiente ➡️: [Solución de problemas frecuentes](08-solucion-problemas.md)

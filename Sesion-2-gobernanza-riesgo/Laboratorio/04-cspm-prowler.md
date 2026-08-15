@@ -42,6 +42,8 @@ Prowler necesita autenticarse contra Azure. Vamos a crear una identidad de aplic
 7. En **Description** escribe `prowler-lab2`, deja la expiración por defecto (o reduce a 90 días, ya que es solo para el laboratorio) y haz clic en **Add**.
 8. **Copia inmediatamente el valor (`Value`) del secreto** — Azure solo lo muestra una vez. Guárdalo en tu archivo temporal.
 
+> 📸 **Captura para el informe — 4.2:** la página de la aplicación `sp-lab2-jvargas-prowler` mostrando el **Application (client) ID** y el **Directory (tenant) ID**. **No incluyas el valor del secreto en la captura** — solo su nombre/descripción.
+
 > 🔒 **Seguridad:** nunca subas este archivo con las credenciales a un repositorio de Git ni lo compartas. Al finalizar el laboratorio, elimina el Service Principal (ver Parte 7).
 
 ### 4.3 Asignar el rol Reader sobre la suscripción
@@ -53,6 +55,8 @@ Prowler necesita autenticarse contra Azure. Vamos a crear una identidad de aplic
 5. En **Assign access to**, deja **User, group, or service principal**.
 6. Haz clic en **+ Select members**, busca `sp-lab2-jvargas-prowler` por su nombre, selecciónalo y haz clic en **Select**.
 7. Haz clic en **Review + assign** (dos veces, para confirmar).
+
+> 📸 **Captura para el informe — 4.3:** la lista de "Role assignments" en IAM mostrando `sp-lab2-jvargas-prowler` con el rol **Reader**.
 
 **Equivalente en Azure CLI** (opcional):
 
@@ -103,6 +107,8 @@ prowler azure --sp-env-auth --list-checks
 prowler azure --sp-env-auth -M csv json html
 ```
 
+> 📸 **Captura para el informe — 4.5:** la terminal mostrando el escaneo en progreso o el resumen final (tabla de hallazgos por severidad) al terminar.
+
 ### 4.6 Revisar el reporte HTML
 
 1. Al finalizar, Prowler indica en la terminal la carpeta donde quedaron los resultados (por defecto: `./output/`).
@@ -110,6 +116,8 @@ prowler azure --sp-env-auth -M csv json html
 3. Abre el archivo `.html` con doble clic (se abre en tu navegador).
 4. Explora el resumen: verás los hallazgos agrupados por severidad (`critical`, `high`, `medium`, `low`) y por servicio.
 5. Identifica los **3 hallazgos de mayor severidad** relacionados con tu Storage Account o tu suscripción — los necesitarás para el informe final.
+
+> 📸 **Captura para el informe — 4.6:** el resumen del reporte HTML (gráfico de hallazgos por severidad) y una captura adicional de los 3 hallazgos de mayor severidad identificados.
 
 ### 4.7 Explorar el Prowler Dashboard (opcional)
 
@@ -120,6 +128,18 @@ prowler dashboard
 ```
 
 La terminal mostrará una URL local (típicamente `http://127.0.0.1:11666`). Ábrela en tu navegador para explorar los hallazgos de forma interactiva, con filtros por severidad, servicio y framework de cumplimiento.
+
+> 📸 **Captura para el informe — 4.7 (opcional):** el Prowler Dashboard mostrando el resumen visual de hallazgos.
+
+---
+
+## Preguntas de repaso
+
+1. ¿Por qué el Service Principal de Prowler solo tiene el rol **Reader** y nunca **Contributor** u **Owner**?
+2. ¿Qué riesgo existe si el `AZURE_CLIENT_SECRET` se filtra, y qué medida de este laboratorio ayuda a mitigarlo?
+3. ¿A qué framework de cumplimiento mapea Prowler los hallazgos cuando usas `--compliance cis_4.0_azure`? ¿Cómo se relaciona esto con el CCM de la CSA visto en la Sesión 2?
+4. De los 3 hallazgos de mayor severidad que identificaste, ¿cuál tratamiento de riesgo (mitigar/transferir/aceptar/evitar) le asignarías a cada uno?
+5. ¿Prowler detectó algún hallazgo relacionado con la etiqueta `ambiente` de la Parte 1, o con la configuración del Storage Account de la Parte 2? ¿Por qué sí o por qué no?
 
 ---
 

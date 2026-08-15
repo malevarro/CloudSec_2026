@@ -8,7 +8,7 @@
 2. En la barra de búsqueda superior escribe `Suscripciones` y haz clic en el resultado **Suscripciones**.
 3. Verifica que tu suscripción diga **"Free Trial"**, **"Azure para estudiantes"** o similar. Anota el **ID de suscripción** (una cadena tipo `00000000-0000-0000-0000-000000000000`) — la necesitarás más adelante.
 
-<p align="center"><em>[Captura sugerida: página de Suscripciones mostrando el ID de suscripción]</em></p>
+> 📸 **Captura para el informe — 0.1:** la página de Suscripciones mostrando el nombre del plan y el ID de suscripción.
 
 ### 0.2 Instalar Azure CLI
 
@@ -29,6 +29,8 @@ azure-cli                         2.65.0
 core                              2.65.0
 telemetry                          1.1.0
 ```
+
+> 📸 **Captura para el informe — 0.2:** la salida completa de `az --version` en tu terminal.
 
 > **Importante:** para la Parte 2 necesitas **Azure CLI 2.61.0 o superior** (soporte de Deployment Stacks). Si tu versión es menor, ejecuta:
 >
@@ -79,6 +81,8 @@ $SUBSCRIPTION_ID = az account show --query id -o tsv
 echo $SUBSCRIPTION_ID
 ```
 
+> 📸 **Captura para el informe — 0.5:** la terminal mostrando el resultado de `az account show` (o el JSON de `az login`) con `"isDefault": true` en tu suscripción Free Tier.
+
 ### 0.6 Crear el grupo de recursos base del laboratorio
 
 Todo lo que creemos vivirá dentro de un único grupo de recursos, para poder borrarlo todo con un solo comando al finalizar.
@@ -105,6 +109,15 @@ Salida esperada (resumida):
 
 ✅ **Checkpoint:** en el portal, busca "Grupos de recursos" y confirma que `rg-lab2-jvargas` aparece en la lista.
 
+> 📸 **Captura para el informe — 0.6:** el grupo de recursos `rg-lab2-jvargas` visible en la lista de "Grupos de recursos" del portal.
+
 ---
+
+## Preguntas de repaso
+
+1. ¿Por qué este laboratorio insiste en usar un único grupo de recursos para todo lo que se crea?
+2. ¿Qué diferencia hay entre el crédito de USD 200 por 30 días y los servicios "Always Free" de Azure?
+3. ¿Qué pasaría si ejecutas los comandos de este laboratorio sin haber hecho antes `az login`?
+4. Menciona dos motivos por los que instalar Python y Node.js es un requisito antes de llegar a la Parte 4 y la Parte 5.
 
 ⬅️ [Inicio (README)](README.md) · 🏠 [README](README.md) · Siguiente ➡️: [Parte 1 · Azure Policy e Initiative](01-azure-policy-initiative.md)

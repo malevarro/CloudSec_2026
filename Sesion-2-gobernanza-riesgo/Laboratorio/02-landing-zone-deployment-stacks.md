@@ -148,6 +148,8 @@ az ts create `
 
 ✅ **Checkpoint:** en el portal, busca **"Template specs"** y confirma que `ts-lab2-landingzone` aparece con la versión `1.0`.
 
+> 📸 **Captura para el informe — 2.5:** el Template Spec `ts-lab2-landingzone` en el portal, mostrando la versión `1.0`.
+
 ### 2.6 Crear el Deployment Stack a partir del Template Spec
 
 Primero obtenemos el ID completo (con versión) del Template Spec que acabamos de crear:
@@ -175,6 +177,8 @@ az stack group create `
   --yes
 ```
 
+> 📸 **Captura para el informe — 2.6:** la salida de la terminal tras crear el Deployment Stack (confirmación de éxito).
+
 **Explicación de los parámetros clave:**
 
 | Parámetro | Qué controla | Valor usado y por qué |
@@ -198,6 +202,8 @@ También puedes verificarlo visualmente:
 2. Confirma que ves: la `vnet-lab2jvargas` (con sus 2 subredes) y el Storage Account `stlab2jvargas`.
 3. Busca **"Deployment Stacks"** en la barra superior y abre `stack-lab2-jvargas` para ver el resumen de recursos administrados.
 
+> 📸 **Captura para el informe — 2.7:** el grupo de recursos `rg-lab2-jvargas` mostrando la VNet y el Storage Account, **o** el resumen del Deployment Stack con ambos recursos en estado "Managed".
+
 ### 2.8 Probar el "deny settings": intentar borrar un recurso manualmente
 
 Vamos a comprobar que la protección funciona de verdad.
@@ -207,6 +213,18 @@ az network vnet delete --name "vnet-lab2jvargas" --resource-group $RG_NAME
 ```
 
 **Resultado esperado:** el comando debe **fallar** con un error de tipo `RequestDisallowedByPolicy` o `ScopeLocked`, indicando que el recurso está protegido por el Deployment Stack. Si esto ocurre, ¡la protección está funcionando correctamente! Esta es la misma lógica de "Resource Locks" que evita que un administrador borre por error un recurso crítico en producción.
+
+> 📸 **Captura para el informe — 2.8:** el mensaje de error de la terminal al intentar borrar la VNet manualmente.
+
+---
+
+## Preguntas de repaso
+
+1. ¿Por qué esta guía usa Deployment Stacks + Template Specs en vez de Azure Blueprints? Explica el contexto de retiro del servicio.
+2. ¿Qué diferencia hay entre un **Template Spec** y un **Deployment Stack**? ¿Por qué se necesitan los dos?
+3. En la plantilla Bicep, identifica dos configuraciones que aplican **Security by Default** directamente (sin depender de Azure Policy). Explica cada una.
+4. ¿Qué significa `--deny-settings-mode denyWriteAndDelete` en términos prácticos para un administrador del entorno?
+5. ¿Qué relación tiene el resultado del paso 2.8 con el concepto de **Control Plane** visto en la Sesión 2?
 
 ---
 

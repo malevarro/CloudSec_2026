@@ -23,7 +23,7 @@ Azure trae cientos de políticas ya escritas. Antes de crear una propia, explore
 3. En el filtro **Type**, selecciona **Built-in**.
 4. En el buscador, escribe `storage` y observa cuántas políticas ya existen para Storage Accounts (por ejemplo: *"Storage accounts should have infrastructure encryption"*, *"Secure transfer to storage accounts should be enabled"*).
 
-<p align="center"><em>[Captura sugerida: lista filtrada de policies built-in relacionadas con "storage"]</em></p>
+> 📸 **Captura para el informe — 1.2:** la lista filtrada de policies built-in relacionadas con "storage".
 
 ### 1.3 Crear una Policy Definition personalizada
 
@@ -54,6 +54,8 @@ Vamos a crear una política simple que **audite** (no bloquee, para no complicar
 
 4. Haz clic en **Save**.
 
+> 📸 **Captura para el informe — 1.3:** la política `lab2-audit-tag-ambiente` guardada, mostrando el editor de la regla JSON.
+
 **Qué acabas de hacer:** definiste una regla declarativa (no un script) que dice *"si el recurso no tiene la etiqueta `ambiente`, repórtalo como no conforme"*. El campo `"effect": "audit"` es intencional — en producción usarías `"deny"`, pero en un laboratorio de aprendizaje `audit` te deja ver el resultado sin bloquear tus propias pruebas.
 
 ### 1.4 Crear una Initiative (Policy Set) con varias políticas
@@ -74,6 +76,8 @@ Ahora agrupemos nuestra política personalizada junto con dos políticas built-i
 
 ✅ **Checkpoint:** en **Definitions**, filtra por **Type = Custom** y confirma que ves tu Initiative `ini-lab2-jvargas-baseline` con **3 policies** agrupadas.
 
+> 📸 **Captura para el informe — 1.4:** la Initiative `ini-lab2-jvargas-baseline` con sus 3 policies agrupadas.
+
 ### 1.5 Asignar (Assign) la Initiative
 
 Una definición no hace nada hasta que se **asigna** a un scope.
@@ -85,6 +89,8 @@ Una definición no hace nada hasta que se **asigna** a un scope.
    - **Assignment name:** se autocompleta con el nombre de la Initiative; déjalo así.
 4. Deja las demás pestañas (**Parameters**, **Remediation**, **Non-compliance messages**) con sus valores por defecto.
 5. Haz clic en **Review + create** y luego en **Create**.
+
+> 📸 **Captura para el informe — 1.5:** la pantalla de confirmación tras crear la asignación ("Assignment succeeded" o similar).
 
 **Equivalente en Azure CLI** (opcional, si prefieres automatizar):
 
@@ -109,6 +115,8 @@ az policy assignment create `
 
 Como el grupo de recursos `rg-lab2-jvargas` está prácticamente vacío en este punto, es normal ver **"No resources found"** o 100 % de cumplimiento — lo interesante viene en el siguiente paso.
 
+> 📸 **Captura para el informe — 1.6:** el panel de Compliance mostrando la asignación y su porcentaje de cumplimiento en este punto.
+
 ### 1.7 Probar la política: forzar un incumplimiento a propósito
 
 Vamos a crear un recurso simple **sin** la etiqueta `ambiente` para comprobar que Azure Policy lo detecta.
@@ -126,7 +134,17 @@ az storage account create `
 
 Este comando, además, nos sirve para la Parte 3 y 4 más adelante. Espera unos 15-20 minutos y vuelve a la vista de **Compliance** (paso 1.6): deberías ver el Storage Account marcado como **Non-compliant** frente a la política de la etiqueta `ambiente` (porque no la definimos al crearlo) — exactamente el comportamiento esperado.
 
-<p align="center"><em>[Captura sugerida: panel de Compliance mostrando el recurso "Non-compliant"]</em></p>
+> 📸 **Captura para el informe — 1.7:** el panel de Compliance mostrando el Storage Account marcado como "Non-compliant".
+
+---
+
+## Preguntas de repaso
+
+1. ¿Cuál es la diferencia entre una **Policy Definition** y una **Initiative**? Da un ejemplo de cuándo usarías cada una.
+2. ¿Por qué en este laboratorio usamos el efecto `audit` en lugar de `deny` para nuestra política personalizada? ¿En qué escenario real usarías `deny`?
+3. ¿Qué significa que una Initiative se asigne a un **scope** específico (grupo de recursos) en lugar de a toda la suscripción? ¿Qué ventaja de gobernanza tiene esto?
+4. Explica con tus palabras por qué Azure Policy es un ejemplo práctico de **Security by Design** (concepto de la Sesión 2).
+5. Si el Storage Account de la Parte 1.7 aparece como "Non-compliant", ¿qué tratamiento de riesgo (mitigar/transferir/aceptar/evitar) aplicarías y por qué?
 
 ---
 

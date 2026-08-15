@@ -29,13 +29,15 @@ Microsoft Defender for Cloud tiene dos niveles de CSPM:
 az security pricing create --name "CloudPosture" --tier "Free"
 ```
 
-<p align="center"><em>[Captura sugerida: pantalla de Environment settings mostrando solo "Foundational CSPM" en On]</em></p>
+> 📸 **Captura para el informe — 3.2:** la pantalla de Environment settings mostrando "Foundational CSPM" en `On` y los planes de pago en `Off`.
 
 ### 3.3 Explorar el Secure Score
 
 1. En el menú izquierdo de Defender for Cloud, ve a **Overview** (o **Secure Score** directamente).
 2. Observa el número principal (0-100 %) — representa qué proporción de las recomendaciones aplicables ya cumples.
 3. Haz clic sobre el score para ver el desglose por **grupos de control** (por ejemplo: "Enable MFA", "Secure management ports", "Encrypt data in transit").
+
+> 📸 **Captura para el informe — 3.3:** el Secure Score general y su desglose por grupos de control (esta es tu captura "ANTES").
 
 > ⏱️ **Nota de tiempos:** si acabas de crear los recursos en la Parte 2, Defender for Cloud puede tardar **varias horas** en completar su primera evaluación completa. Es normal ver el score parcial o "Not yet assessed" en algunos controles durante el laboratorio — lo importante es entender la mecánica, no esperar el número final.
 
@@ -50,7 +52,19 @@ az security pricing create --name "CloudPosture" --tier "Free"
 
 ### 3.5 Registrar la evolución del Secure Score
 
-Toma una captura de pantalla del Secure Score **antes** y **después** de remediar las recomendaciones del paso 3.4. La necesitarás para el informe final (Parte 6).
+> 📸 **Captura para el informe — 3.4:** las dos recomendaciones remediadas, mostrando su estado "Fixed"/"Resolved" o la pantalla de confirmación del botón "Fix".
+
+> 📸 **Captura para el informe — 3.5:** el Secure Score general **después** de remediar (compárala con la captura 3.3 "ANTES" en tu informe final).
+
+---
+
+## Preguntas de repaso
+
+1. ¿Cuál es la diferencia entre el plan **Foundational CSPM** y **Defender CSPM**? ¿Por qué este laboratorio solo usa el primero?
+2. ¿Qué representa el número del Secure Score y qué tipo de decisión de negocio puede apoyar?
+3. Compara tus capturas de "antes" y "después": ¿cuánto cambió el score al remediar las dos recomendaciones?
+4. ¿Por qué algunas recomendaciones de Storage Account nunca aparecieron en tu Secure Score, a diferencia de lo que verías si hubieras creado el recurso sin la plantilla Bicep de la Parte 2?
+5. Relaciona el Secure Score con el **Microsoft Cloud Security Benchmark (MCSB)** mencionado en la Sesión 2 — ¿qué framework de gobernanza está detrás de estas recomendaciones?
 
 ---
 
