@@ -84,9 +84,9 @@ Laboratorio práctico de **90 minutos**, diseñado íntegramente para **cuenta A
 7. Consolidación del informe de gobernanza y riesgo
 8. Limpieza de recursos
 
-Cada sección incluye capturas de pantalla guiadas y preguntas de repaso. Consulta también la [solución de problemas frecuentes](./Laboratorio-2-Gobernanza-Riesgo-CSPM/08-solucion-problemas.md) si algo falla.
+Cada sección incluye capturas de pantalla guiadas y preguntas de repaso. Consulta también la [solución de problemas frecuentes](./Laboratorio/08-solucion-problemas.md) si algo falla.
 
-> ⚠️ **Formato de entrega:** el laboratorio se entrega en **un único archivo PDF, cargado en Google Classroom**. No se reciben archivos de ningún otro formato. Ver el detalle completo en la [Parte 6 — Entregable final](./Laboratorio-2-Gobernanza-Riesgo-CSPM/06-consolidacion-informe.md#entregable-final) y en la [Rúbrica de evaluación](./Laboratorio-2-Gobernanza-Riesgo-CSPM/09-rubrica-evaluacion.md).
+> ⚠️ **Formato de entrega:** el laboratorio se entrega en **un único archivo PDF, cargado en Google Classroom**. No se reciben archivos de ningún otro formato. Ver el detalle completo en la [Parte 6 — Entregable final](./Laboratorio/06-consolidacion-informe.md#entregable-final) y en la [Rúbrica de evaluación](./Laboratorio/09-rubrica-evaluacion.md).
 
 ---
 
@@ -106,7 +106,7 @@ Cada sección incluye capturas de pantalla guiadas y preguntas de repaso. Consul
 - Cloud Security Alliance. *Top Threats to Cloud Computing 2024* y *Security Guidance for Critical Areas of Focus in Cloud Computing v5*.
 - CISA/NSA/FBI et al. *Shifting the Balance of Cybersecurity Risk: Security-by-Design and -Default* (2023).
 
-La lista completa de referencias técnicas del laboratorio está en el [README del laboratorio](./Laboratorio-2-Gobernanza-Riesgo-CSPM/README.md#referencias).
+La lista completa de referencias técnicas del laboratorio está en el [README del laboratorio](./Laboratorio/README.md#referencias).
 
 ---
 
