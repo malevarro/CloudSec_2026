@@ -12,9 +12,9 @@ Este repositorio reúne **todo el material de la Sesión 2** del módulo Segurid
 
 | Material | Dónde está | Para qué sirve |
 | --- | --- | --- |
-| 🖥️ Presentación teórica | [`Sesion2_Gobernanza_Riesgo_Cumplimiento.pptx`](./Sesion2_Gobernanza_Riesgo_Cumplimiento.pptx) | Bloque teórico de la sesión (clase magistral) — 37 diapositivas |
-| 🧪 Guía de laboratorio | [`Laboratorio-2-Gobernanza-Riesgo-CSPM/README.md`](./Laboratorio-2-Gobernanza-Riesgo-CSPM/README.md) | Laboratorio guiado paso a paso en Azure Free Tier |
-| 📊 Rúbrica de evaluación | [`Laboratorio-2-Gobernanza-Riesgo-CSPM/09-rubrica-evaluacion.md`](./Laboratorio-2-Gobernanza-Riesgo-CSPM/09-rubrica-evaluacion.md) | Cómo se califica la entrega del laboratorio |
+| 🖥️ Presentación teórica | [`Sesion2_Gobernanza_Riesgo_Cumplimiento.pptx`](./Presentacion/Sesion2_Gobernanza_Riesgo_Cumplimiento.pptx) | Bloque teórico de la sesión (clase magistral) — 37 diapositivas |
+| 🧪 Guía de laboratorio | [`Laboratorio-2-Gobernanza-Riesgo-CSPM/README.md`](./Laboratorio/README.md) | Laboratorio guiado paso a paso en Azure Free Tier |
+| 📊 Rúbrica de evaluación | [`Laboratorio-2-Gobernanza-Riesgo-CSPM/09-rubrica-evaluacion.md`](./Laboratorio/09-rubrica-evaluacion.md) | Cómo se califica la entrega del laboratorio |
 
 ---
 
@@ -65,24 +65,24 @@ Al finalizar la sesión, el estudiante **evaluará el cumplimiento normativo y e
 
 ## 🖥️ Presentación teórica
 
-**Archivo:** [`Sesion2_Gobernanza_Riesgo_Cumplimiento.pptx`](./Sesion2_Gobernanza_Riesgo_Cumplimiento.pptx) · 37 diapositivas
+**Archivo:** [`Sesion2_Gobernanza_Riesgo_Cumplimiento.pptx`](./Presentacion/Sesion2_Gobernanza_Riesgo_Cumplimiento.pptx) · 37 diapositivas
 
 Incluye, en orden: portada y agenda, apertura con objetivos y laboratorio, mapa del curso, resumen de la Sesión 1, los cuatro bloques temáticos (gestión de riesgos, gobernanza, diseño seguro, planos de control/datos), síntesis, puente al laboratorio, y cierre con referencias bibliográficas.
 
 ## 🧪 Laboratorio guiado
 
-**Carpeta:** [`Laboratorio-2-Gobernanza-Riesgo-CSPM/`](./Laboratorio-2-Gobernanza-Riesgo-CSPM/) · empieza por su [README](./Laboratorio-2-Gobernanza-Riesgo-CSPM/README.md)
+**Carpeta:** [`Laboratorio-2-Gobernanza-Riesgo-CSPM/`](./Laboratorio) · empieza por su [README](./Laboratorio/README.md)
 
 Laboratorio práctico de **90 minutos**, diseñado íntegramente para **cuenta Azure Free Tier**, dividido en 7 partes:
 
-0. Preparación del entorno
-1. Azure Policy e Initiative
-2. Landing Zone básica (Deployment Stacks + Template Specs)
-3. Microsoft Defender for Cloud (Secure Score)
-4. CSPM con Prowler
-5. CSPM con CloudSploit
-6. Consolidación del informe de gobernanza y riesgo
-7. Limpieza de recursos
+1. Preparación del entorno
+2. Azure Policy e Initiative
+3. Landing Zone básica (Deployment Stacks + Template Specs)
+4. Microsoft Defender for Cloud (Secure Score)
+5. CSPM con Prowler
+6. CSPM con CloudSploit
+7. Consolidación del informe de gobernanza y riesgo
+8. Limpieza de recursos
 
 Cada sección incluye capturas de pantalla guiadas y preguntas de repaso. Consulta también la [solución de problemas frecuentes](./Laboratorio-2-Gobernanza-Riesgo-CSPM/08-solucion-problemas.md) si algo falla.
 
