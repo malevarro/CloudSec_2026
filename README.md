@@ -1,107 +1,197 @@
-# Sesión 3 — Seguridad de Datos e Identidad y Acceso (IAM)
+# ☁️ Ciberseguridad en la Nube
 
-**Especialización en Ciberseguridad · Seguridad en la Nube**
-Escuela de Comunicaciones Militares (ESCOM) — Ejército Nacional de Colombia
-Instructor: Manuel Alejandro Vargas Rojas · manuelvargasrojas@cedoc.edu.co
+**Especialización en Ciberseguridad — Escuela de Comunicaciones Militares (ESCOM)**
 
-Este README es la puerta de entrada a todo el material de la Sesión 3. Desde aquí se navega a la presentación teórica, la guía de laboratorio y la rúbrica de evaluación.
+Curso de especialización en modalidad **híbrida** (presencial + virtual) enfocado en el diseño, implementación y operación de controles de seguridad en entornos de cómputo en la nube, con laboratorios prácticos sobre **Microsoft Azure**.
 
----
-
-## 1. Descripción general
-
-La Sesión 3 baja el gobierno y el riesgo formalizados en la Sesión 2 a los dos activos que, bajo el modelo de responsabilidad compartida, siempre son responsabilidad del cliente en la nube: **las identidades** y **los datos**. Cubre el ciclo completo de Cloud IAM (RBAC/ABAC/PBAC, MFA), los protocolos de federación de identidades (SAML, OAuth 2.0, OIDC, JWT), la protección de datos mediante cifrado y gestión de llaves (KMS, HSM, CMK), y el cierre del ciclo con clasificación de datos y DLP.
-
-**Duración:** 4 horas (2 h teoría + 2 h laboratorio) · **Evaluación:** 20 % de la nota final del módulo.
+| | |
+|---|---|
+| **Modalidad** | Híbrida (presencial + virtual) |
+| **Duración** | 5 sesiones · 32 h trabajo en clase (HTA) + 64 h trabajo independiente (HTI) = **96 h totales** |
+| **Plataforma de laboratorios** | Microsoft Azure (Free Tier) |
+| **Créditos académicos** | 2 |
+| **Docente** | Manuel Alejandro Vargas Rojas |
 
 ---
 
-## 2. Resultado de aprendizaje evaluado
+## 📌 Descripción general
 
-Al finalizar la sesión, el estudiante es capaz de **implementar controles de identidad, acceso y protección de datos en un entorno cloud real** (Microsoft Azure), aplicando el principio de mínimo privilegio y documentando cada control con evidencia verificable.
+Este curso dota al estudiante de las competencias técnicas y de gobernanza necesarias para operar de forma segura en entornos cloud, siguiendo una progresión pedagógica que avanza de lo conceptual hacia lo técnico-operativo:
 
----
+1. **Fundamentos y principios de seguridad** → 2. **Gobernanza y riesgo** → 3. **Identidad y datos** → 4. **Infraestructura y redes** → 5. **Operaciones y respuesta a incidentes**
 
-## 3. Estructura del repositorio
+Cada sesión combina un bloque **teórico** (presentación de fundamentos y marcos de referencia) con un **laboratorio práctico guiado** sobre Azure, reforzando en todo el curso los principios transversales de **Zero Trust, Least Privilege y Defense in Depth**.
 
-```
-sesion-3-iam-datos/
-├── README.md                                      ← este archivo
-├── presentacion/
-│   └── Sesion3_Seguridad_Datos_IAM.pptx            ← presentación teórica (37 diapositivas)
-└── laboratorio/                                    ← guía de laboratorio (11 archivos)
-    ├── README.md                                   ← punto de partida del laboratorio
-    ├── RUBRICA-EVALUACION.md                       ← rúbrica de calificación
-    ├── 00-preparacion-entorno.md
-    ├── 01-entra-id-rbac.md
-    ├── 02-cifrado-storage.md
-    ├── 03-cifrado-vms.md
-    ├── 04-integracion-saml.md
-    ├── 05-integracion-oidc.md
-    ├── 06-consolidacion-informe.md
-    ├── 07-limpieza-recursos.md
-    └── 08-solucion-problemas.md
-```
+### 🎯 Competencia general
 
----
+El estudiante estará en capacidad de diseñar, implementar y evaluar controles de seguridad en entornos de cómputo en la nube, aplicando los principios de responsabilidad compartida, gestión de riesgos, gobernanza y operación segura.
 
-## 4. Navegación rápida
+### Competencias específicas
 
-| Material | Qué contiene | Enlace |
-|---|---|---|
-| 📊 Presentación teórica | 37 diapositivas: Cloud IAM, federación (SAML/OAuth/OIDC/JWT), protección de datos (cifrado, KMS, HSM, CMK), clasificación y DLP | [`presentacion/Sesion3_Seguridad_Datos_IAM.pptx`](./presentacion/Sesion3_Seguridad_Datos_IAM.pptx) |
-| 🧪 Guía de laboratorio | Entra ID + RBAC → cifrado de Storage → cifrado de VM's → integración SAML → integración OIDC, paso a paso sobre Azure Free Tier | [`laboratorio/README.md`](./laboratorio/README.md) |
-| 📋 Rúbrica de evaluación | Criterios de calificación, niveles de desempeño y penalizaciones | [`laboratorio/RUBRICA-EVALUACION.md`](./laboratorio/RUBRICA-EVALUACION.md) |
+- Aplicar el modelo de responsabilidad compartida y los principios de Zero Trust, Defense in Depth y Least Privilege en el diseño de arquitecturas cloud.
+- Evaluar el cumplimiento normativo y el riesgo de un entorno cloud utilizando marcos de gobernanza (SOC 2, ISO 31000/NIST RMF) y herramientas CSPM.
+- Configurar mecanismos de identidad y acceso (IAM, RBAC/ABAC, federación SAML/OIDC/JWT) y de protección de datos (cifrado, KMS, DLP) en la nube.
+- Diseñar e implementar arquitecturas de red seguras con segmentación, firewall/IDS-IPS, Private Endpoints y WAF.
+- Operar capacidades de monitoreo, detección y respuesta a incidentes de seguridad en entornos cloud.
+
+### 👥 Audiencia y requisitos
+
+Audiencia mixta: perfiles de TI con poca exposición a seguridad y perfiles de seguridad con poca exposición a cloud. Se recomiendan conocimientos básicos de redes, sistemas operativos y fundamentos de seguridad de la información (CIA). No se requiere experiencia previa en proveedores cloud.
+
+### 🛠️ Requisitos técnicos para los laboratorios
+
+- Cuenta de [Microsoft Azure Free Tier](https://azure.microsoft.com/free/)
+- Navegador web actualizado + acceso a Azure Portal y Azure Cloud Shell
+- [OWASP Threat Dragon](https://owasp.org/www-project-threat-dragon/) (web o desktop)
+- [Prowler](https://github.com/prowler-cloud/prowler) y [CloudSploit](https://github.com/aquasecurity/cloudsploit)
+- Git / GitHub para clonar las guías de laboratorio
 
 ---
 
-## 5. El camino del curso
+## 🗂️ Estructura del curso
 
-```mermaid
-flowchart LR
-    S1["Sesión 1<br/>Fundamentos y<br/>Responsabilidad Compartida"] --> S2["Sesión 2<br/>Gobernanza, Riesgo,<br/>Cumplimiento"]
-    S2 --> S3["Sesión 3<br/>Datos e Identidad<br/>y Acceso (IAM)"]
-    S3 --> S4["Sesión 4<br/>Infraestructura, Redes<br/>y Acceso Privado"]
-    S4 --> S5["Sesión 5<br/>Security Operations,<br/>Observabilidad e Incidentes"]
-
-    style S3 fill:#02C39A,stroke:#0B2027,color:#0B2027
-```
-
-**Viene de la Sesión 2:** la gobernanza y el mínimo privilegio ya establecidos se aplican ahora en la práctica a identidades y datos concretos.
-**Prepara la Sesión 4:** el Key Vault configurado con acceso público en esta sesión se protegerá con un **Private Endpoint** en la Sesión 4, eliminando su exposición a internet.
+| Sesión | Tema | HTA | HTI | Laboratorio |
+|---|---|---|---|---|
+| 1 | Fundamentos de Cloud Computing, Responsabilidad Compartida y Principios de Seguridad | 7 h | 13 h | Threat Modeling + Managed Identity |
+| 2 | Gobernanza, Riesgo, Cumplimiento y Arquitectura Segura | 7 h | 13 h | CSPM con Prowler y CloudSploit |
+| 3 | Seguridad de Datos e Identidad y Acceso (IAM) | 6 h | 13 h | IAM, cifrado y federación de identidad |
+| 4 | Seguridad de Infraestructura, Redes y Acceso Privado | 6 h | 13 h | Red segura + PaaS + WAF |
+| 5 | Cloud Security Operations, Observabilidad y Respuesta a Incidentes | 6 h | 12 h | Respuesta a incidente de credenciales IAM |
+| **Total** | | **32 h** | **64 h** | |
 
 ---
 
-## 6. Bloques temáticos de la sesión
+## 📖 Contenido y laboratorios por sesión
 
-| Bloque | Tema | Cubierto en |
-|---|---|---|
-| 1 | Cloud IAM — RBAC, ABAC, PBAC, MFA | Presentación · Laboratorio Sección 1 |
-| 2 | Federación de identidades — SAML, OAuth 2.0, OIDC, JWT | Presentación · Laboratorio Secciones 4 y 5 |
-| 3 | Protección de datos — cifrado, TLS, KMS, HSM, CMK, gestión de llaves | Presentación · Laboratorio Secciones 2 y 3 |
-| 4 | Clasificación de datos y DLP | Presentación |
+### Sesión 1 — Fundamentos de Cloud Computing, Responsabilidad Compartida y Principios de Seguridad
 
----
+**Contenido teórico:**
+- Modelos de servicio (IaaS/PaaS/SaaS) y de despliegue
+- Shared Responsibility Model y panorama de amenazas (*Top Threats to Cloud Computing 2024*)
+- Principios fundamentales: Least Privilege, Defense in Depth, Zero Trust, Trust Boundaries
+- Threat Modeling, STRIDE, OWASP
 
-## 7. Cómo usar este material
+**Laboratorio:**
+- Alta y exploración de una suscripción Azure Free Tier (Portal, Resource Groups)
+- Ejercicio de **Threat Modeling con OWASP Threat Dragon** sobre un escenario de arquitectura cloud
+- Creación de una **Managed Identity** y uso para integrar 2 componentes cloud sin credenciales embebidas
 
-1. **Estudia la presentación** (`presentacion/Sesion3_Seguridad_Datos_IAM.pptx`) — cubre toda la base teórica que el laboratorio da por conocida.
-2. **Realiza el laboratorio** siguiendo el orden exacto indicado en su [README](./laboratorio/README.md): preparación del entorno → Entra ID/RBAC → cifrado de Storage → cifrado de VM's → SAML → OIDC → consolidación del informe → limpieza de recursos.
-3. **Revisa la rúbrica** antes de entregar, para verificar que tu informe cumple cada criterio.
-
----
-
-## 8. Formato de entrega — recordatorio
-
-> ⚠️ La entrega del laboratorio se realiza **únicamente en un único archivo PDF, cargado en Google Classroom**. El detalle completo está en [`06-consolidacion-informe.md`](./laboratorio/06-consolidacion-informe.md) del laboratorio, y los criterios exactos de calificación en la [rúbrica](./laboratorio/RUBRICA-EVALUACION.md).
+**Evidencia:** Diagrama de responsabilidad compartida, modelo de amenazas en Threat Dragon y Managed Identity funcional.
 
 ---
 
-## 9. Referencias bibliográficas principales
+### Sesión 2 — Gobernanza, Riesgo, Cumplimiento y Arquitectura Segura
 
+**Contenido teórico:**
+- Marcos de cumplimiento SOC (tipos de reporte SOC 1/2/3, foco en **SOC 2 Tipo II**)
+- Gestión de riesgos: conceptos base, ciclo **ISO 31000 / NIST RMF**, gestión de riesgos en la nube
+- Principios de diseño seguro: **CSA Guidance**, Security by Design, Security by Default, Control Plane vs. Data Plane
+
+**Laboratorio:**
+- Configuración de gobernanza con Azure Policy
+- **CSPM (Cloud Security Posture Management) con Prowler y CloudSploit** sobre el entorno Azure del curso
+
+**Evidencia:** Informe de gobernanza/riesgo y reporte CSPM con hallazgos priorizados.
+
+---
+
+### Sesión 3 — Seguridad de Datos e Identidad y Acceso (IAM)
+
+**Contenido teórico:**
+- **Cloud IAM:** IAM, RBAC, ABAC, MFA, Federation, SAML, OAuth 2.0, OpenID Connect, JWT
+- Protección de datos: cifrado en tránsito/reposo, KMS, Secrets Management, Key Rotation, Data Classification, Tokenización, DLP
+
+**Laboratorio:**
+- Configuración de Microsoft Entra ID, RBAC y Azure Key Vault; cifrado de un Storage Account
+- **Integración SAML** de Entra ID con [sptest.iamshowcase.com](https://sptest.iamshowcase.com/)
+- **Integración OIDC** con la aplicación de ejemplo [ms-identity-python-webapp](https://github.com/Azure-Samples/ms-identity-python-webapp)
+
+**Evidencia:** Entorno IAM configurado + integraciones SAML/OIDC funcionales.
+
+---
+
+### Sesión 4 — Seguridad de Infraestructura, Redes y Acceso Privado
+
+**Contenido teórico:**
+- Arquitectura de red segura, Private Endpoints, Security Groups, WAF, Bastion, TLS
+- Acceso privado a servicios PaaS
+
+**Laboratorio** *(guía consolidada — ver `/sesion-4/`)*:
+- **Parte I:** Arquitectura Hub & Spoke con Zentyal (NVA/IDS-IPS) y NSG por subred
+- **Parte II:** Aplicación PaaS de 3 capas (App Service + Function App + Azure SQL) con Private Endpoints y Managed Identity
+- **Parte III:** Contenedor DVWA + **Application Gateway con WAF (OWASP CRS)**, con prueba de bloqueo de SQLi/Command Injection
+
+**Evidencia:** Arquitectura de red segura desplegada con bloqueo de ataques verificado.
+
+---
+
+### Sesión 5 — Cloud Security Operations, Observabilidad y Respuesta a Incidentes
+
+**Contenido teórico:**
+- **Módulo 1 — Visibilidad:** Logging, Monitoring, Telemetría, Observabilidad (Azure Monitor/Sentinel, CloudTrail, GuardDuty)
+- **Módulo 2 — Detección:** MITRE ATT&CK Cloud, Threat Hunting, SIEM, XDR, SOAR
+- **Módulo 3 — Respuesta:** Playbooks, forense cloud, Contención, RCA, Lessons Learned
+- **Tendencias:** CSPM, IA Security, SASE, CNAPP, Post-Quantum Security, Cloud Native Security
+
+**Laboratorio:**
+- **Escenario de compromiso de credenciales IAM:** análisis de logs → identificación del ataque → contención → erradicación → informe ejecutivo
+
+**Evidencia:** Informe ejecutivo del incidente.
+
+---
+
+## 📊 Evaluación
+
+Cada laboratorio equivale al **20%** de la nota final (5 sesiones × 20% = 100%).
+
+## 📚 Bibliografía
+
+**Lecturas obligatorias**
 - Edwards, J. *Cloud Security Fundamentals*.
+- Cloud Security Alliance (CSA). *Top Threats to Cloud Computing 2024* (Egregious Eleven).
+
+**Lecturas complementarias**
 - Thompson, G. *Certificate of Cloud Security Knowledge (CCSK v5) Official Study Guide*.
-- Messier, R. *Learning Cloud Security: Cloud Computing and Security Architecture Essentials*.
-- Dotson, C. *Practical Cloud Security: A Guide for Secure Design and Deployment*, 2nd Ed.
-- Cloud Security Alliance. *Top Threats to Cloud Computing 2024*.
-- Microsoft Learn — [Entra ID](https://learn.microsoft.com/entra/), [Key Vault](https://learn.microsoft.com/azure/key-vault/), [Disk Encryption](https://learn.microsoft.com/azure/virtual-machines/disk-encryption).
+- Dotson, C. *Practical Cloud Security: A Guide for Secure Design and Deployment*, 2nd Edition. O'Reilly Media.
+- Messier, R. *Learning Cloud Security: Cloud Computing and Security Architecture Essentials*. O'Reilly Media.
+- *Cloud Computing Security: Strategies and Best Practices*.
+
+**Recursos adicionales**
+- [OWASP Threat Dragon Documentation](https://owasp.org/www-project-threat-dragon/)
+- [MITRE ATT&CK for Cloud](https://attack.mitre.org/matrices/enterprise/cloud/)
+
+## 🗃️ Recursos del curso
+
+- Google Classroom del módulo (materiales, foros, seguimiento HTI)
+- Cuenta Microsoft Azure Free Tier
+- GitHub (este repositorio) para guías de laboratorio versionadas
+- OWASP Threat Dragon, Prowler, CloudSploit, Microsoft Entra ID, Azure Monitor/Sentinel
+
+---
+
+## 📁 Estructura sugerida del repositorio
+
+```
+.
+├── README.md
+├── sesion-1-fundamentos/
+│   ├── presentacion/
+│   └── laboratorio/
+├── sesion-2-gobernanza-riesgo/
+│   ├── presentacion/
+│   └── laboratorio/
+├── sesion-3-iam-datos/
+│   ├── presentacion/
+│   └── laboratorio/
+├── sesion-4-infraestructura-redes/
+│   ├── presentacion/
+│   └── laboratorio/
+└── sesion-5-secops-respuesta/
+    ├── presentacion/
+    └── laboratorio/
+```
+
+---
+
+**Docente:** Manuel Alejandro Vargas Rojas · [manuelvargasrojas@cedoc.edu.co](mailto:manuelvargasrojas@cedoc.edu.co)
+**Institución:** Escuela de Comunicaciones Militares (ESCOM) — Especialización en Ciberseguridad
