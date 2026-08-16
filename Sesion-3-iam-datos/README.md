@@ -27,9 +27,9 @@ Al finalizar la sesión, el estudiante es capaz de **implementar controles de id
 ```
 sesion-3-iam-datos/
 ├── README.md                                      ← este archivo
-├── presentacion/
+├── Presentacion/
 │   └── Sesion3_Seguridad_Datos_IAM.pptx            ← presentación teórica (37 diapositivas)
-└── laboratorio/                                    ← guía de laboratorio (11 archivos)
+└── Laboratorio/                                    ← guía de laboratorio (11 archivos)
     ├── README.md                                   ← punto de partida del laboratorio
     ├── RUBRICA-EVALUACION.md                       ← rúbrica de calificación
     ├── 00-preparacion-entorno.md
@@ -49,9 +49,9 @@ sesion-3-iam-datos/
 
 | Material | Qué contiene | Enlace |
 |---|---|---|
-| 📊 Presentación teórica | 37 diapositivas: Cloud IAM, federación (SAML/OAuth/OIDC/JWT), protección de datos (cifrado, KMS, HSM, CMK), clasificación y DLP | [`presentacion/Sesion3_Seguridad_Datos_IAM.pptx`](./presentacion/Sesion3_Seguridad_Datos_IAM.pptx) |
-| 🧪 Guía de laboratorio | Entra ID + RBAC → cifrado de Storage → cifrado de VM's → integración SAML → integración OIDC, paso a paso sobre Azure Free Tier | [`laboratorio/README.md`](./laboratorio/README.md) |
-| 📋 Rúbrica de evaluación | Criterios de calificación, niveles de desempeño y penalizaciones | [`laboratorio/RUBRICA-EVALUACION.md`](./laboratorio/RUBRICA-EVALUACION.md) |
+| 📊 Presentación teórica | 37 diapositivas: Cloud IAM, federación (SAML/OAuth/OIDC/JWT), protección de datos (cifrado, KMS, HSM, CMK), clasificación y DLP | [`Presentacion/Sesion3_Seguridad_Datos_IAM.pptx`](./Presentacion/Sesion3_Seguridad_Datos_IAM.pptx) |
+| 🧪 Guía de laboratorio | Entra ID + RBAC → cifrado de Storage → cifrado de VM's → integración SAML → integración OIDC, paso a paso sobre Azure Free Tier | [`laboratorio/README.md`](./Laboratorio/README.md) |
+| 📋 Rúbrica de evaluación | Criterios de calificación, niveles de desempeño y penalizaciones | [`laboratorio/RUBRICA-EVALUACION.md`](./Laboratorio/RUBRICA-EVALUACION.md) |
 
 ---
 
@@ -85,15 +85,15 @@ flowchart LR
 
 ## 7. Cómo usar este material
 
-1. **Estudia la presentación** (`presentacion/Sesion3_Seguridad_Datos_IAM.pptx`) — cubre toda la base teórica que el laboratorio da por conocida.
-2. **Realiza el laboratorio** siguiendo el orden exacto indicado en su [README](./laboratorio/README.md): preparación del entorno → Entra ID/RBAC → cifrado de Storage → cifrado de VM's → SAML → OIDC → consolidación del informe → limpieza de recursos.
+1. **Estudia la presentación** (`Presentacion/Sesion3_Seguridad_Datos_IAM.pptx`) — cubre toda la base teórica que el laboratorio da por conocida.
+2. **Realiza el laboratorio** siguiendo el orden exacto indicado en su [README](./Laboratorio/README.md): preparación del entorno → Entra ID/RBAC → cifrado de Storage → cifrado de VM's → SAML → OIDC → consolidación del informe → limpieza de recursos.
 3. **Revisa la rúbrica** antes de entregar, para verificar que tu informe cumple cada criterio.
 
 ---
 
 ## 8. Formato de entrega — recordatorio
 
-> ⚠️ La entrega del laboratorio se realiza **únicamente en un único archivo PDF, cargado en Google Classroom**. El detalle completo está en [`06-consolidacion-informe.md`](./laboratorio/06-consolidacion-informe.md) del laboratorio, y los criterios exactos de calificación en la [rúbrica](./laboratorio/RUBRICA-EVALUACION.md).
+> ⚠️ La entrega del laboratorio se realiza **únicamente en un único archivo PDF, cargado en Google Classroom**. El detalle completo está en [`06-consolidacion-informe.md`](./Laboratorio/06-consolidacion-informe.md) del laboratorio, y los criterios exactos de calificación en la [rúbrica](./Laboratorio/RUBRICA-EVALUACION.md).
 
 ---
 
