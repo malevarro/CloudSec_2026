@@ -6,7 +6,7 @@
 
 ## 🎯 Objetivo de esta sección
 
-Entender qué es Azure Resource Manager y crear el **Resource Group** que va a contener todos los recursos de este laboratorio (Storage Account, Key Vault y App Service), para poder organizarlos y — al final — eliminarlos de una sola vez.
+Entender qué es Azure Resource Manager y crear el **Resource Group** que va a contener todos los recursos de este laboratorio (Storage Account, Key Vault y Automation Account), para poder organizarlos y — al final — eliminarlos de una sola vez.
 
 ---
 
@@ -25,7 +25,7 @@ flowchart TD
     S["💳 Subscription<br/>tu 'Azure subscription 1' Free Trial"]
     RG1["📦 Resource Group<br/>rg-lab1-&lt;inic&gt;"]
     RG2["📦 Resource Group<br/>(otro, de otro proyecto)"]
-    R1["🌐 App Service"]
+    R1["🌐 Automation Account"]
     R2["🗄️ Storage Account"]
     R3["🔑 Key Vault"]
 
@@ -43,7 +43,7 @@ flowchart TD
 | **Management Group** | Agrupa varias suscripciones (uso empresarial avanzado) | No lo usaremos en este laboratorio |
 | **Subscription** | Unidad de facturación y de aislamiento | Tu "Azure subscription 1" (Free Trial) |
 | **Resource Group (RG)** | Contenedor lógico de recursos relacionados, con el mismo ciclo de vida | `rg-lab1-<inic>` |
-| **Resource** | El recurso individual (VM, App Service, Storage, etc.) | App Service, Storage Account, Key Vault |
+| **Resource** | El recurso individual (VM, Automation Account, Storage, etc.) | Automation Account, Storage Account, Key Vault |
 
 ### 💡 ¿Qué es (y qué NO es) un Resource Group?
 
@@ -105,7 +105,7 @@ Ahora que existe, recorre sus secciones principales — las volverás a usar con
 2. Haz clic en la pestaña **Role assignments** (Asignaciones de roles).
 3. Deberías verte a ti mismo listado, normalmente con el rol **Owner** (Propietario) — heredado de ser quien creó la suscripción.
 
-> 💡 Aquí es exactamente donde, en la Sección 6, asignaremos un rol de **solo lectura** a la Managed Identity del App Service — mucho más restringido que el rol de Owner que tú tienes.
+> 💡 Aquí es exactamente donde, en la Sección 6, asignaremos un rol de **solo lectura** a la Managed Identity de la Automation Account — mucho más restringido que el rol de Owner que tú tienes.
 
 ### ✅ 3.4 Tags (Etiquetas)
 

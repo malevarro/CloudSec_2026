@@ -37,7 +37,7 @@ El documento PDF debe incluir, en este orden, la evidencia de las 6 secciones de
 4. **Sección 3 — Exploración del Portal:** captura del menú de Favoritos configurado.
 5. **Sección 4 — ARM / Resource Groups:** captura del Resource Group creado, con sus etiquetas (`tags`) visibles.
 6. **Sección 5 — Mapeo de responsabilidades:** tabla de responsabilidades completa (VM / App Service / SaaS) con las 8 filas llenas.
-7. **Sección 6 — Managed Identity:** capturas de (a) Identity = On con el Object ID, (b) los dos Role assignments (Storage y Key Vault), (c) las respuestas JSON del `curl` al IMDS mostrando el `access_token`, y (d) el Resource Group eliminado al finalizar.
+7. **Sección 6 — Managed Identity:** capturas de (a) Identity = On con el Object ID, (b) los dos Role assignments (Storage y Key Vault), (c) el Output del Job del runbook mostrando la lectura exitosa del blob y del secreto, y (d) el Resource Group eliminado al finalizar.
 8. **Respuestas a las preguntas de repaso** de cada una de las 6 secciones de la guía.
 
 > 💡 Todas las capturas marcadas con el ícono 📸 a lo largo de la guía de laboratorio son las que debes incluir en tu PDF.
@@ -93,14 +93,14 @@ Cada sección se califica en 4 niveles de desempeño. El puntaje obtenido en cad
 | **Aceptable** | 5–8 | Tabla incompleta (faltan filas) o con más de 2 errores conceptuales. |
 | **Insuficiente** | 0–4 | Tabla no entregada o con la mayoría de las celdas vacías o incorrectas. |
 
-### Sección 6 — Managed Identity: App Service → Storage + Key Vault (30 pts)
+### Sección 6 — Managed Identity: Automation Account → Storage + Key Vault (30 pts)
 
 | Nivel | Puntos | Descripción |
 |---|---|---|
-| **Excelente** | 27–30 | Evidencia completa de: App Service en plan F1, Managed Identity habilitada (Object ID visible), roles RBAC mínimos asignados correctamente en Storage **y** Key Vault (no roles excesivos como `Contributor`/`Owner`), tokens obtenidos exitosamente desde el IMDS para ambos servicios, ausencia de credenciales confirmada en Application settings, y Resource Group eliminado al finalizar. |
+| **Excelente** | 27–30 | Evidencia completa de: Automation Account creada, Managed Identity habilitada (Object ID visible), roles RBAC mínimos asignados correctamente en Storage **y** Key Vault (no roles excesivos como `Contributor`/`Owner`), runbook publicado y ejecutado con Output mostrando la lectura exitosa del blob y del secreto para ambos servicios, ausencia de credenciales confirmada en Credentials/Variables, y Resource Group eliminado al finalizar. |
 | **Bueno** | 20–26 | Se completó la integración con **uno solo** de los dos servicios (Storage **o** Key Vault) con evidencia completa, o falta 1 de los checkpoints menores (ej. no se muestra la limpieza final). |
-| **Aceptable** | 12–19 | La Managed Identity fue habilitada pero la obtención del token falla o no se evidencia, o los roles asignados no siguen el principio de mínimo privilegio (ej. se usó `Owner`). |
-| **Insuficiente** | 0–11 | No hay evidencia de Managed Identity funcional, o se usaron credenciales tradicionales (connection strings/claves) en lugar de identidad administrada. |
+| **Aceptable** | 12–19 | La Managed Identity fue habilitada pero la ejecución del runbook falla o no se evidencia el Output, o los roles asignados no siguen el principio de mínimo privilegio (ej. se usó `Owner`). |
+| **Insuficiente** | 0–11 | No hay evidencia de Managed Identity funcional, o se usaron credenciales tradicionales (connection strings/claves/activos de tipo Credential) en lugar de identidad administrada. |
 
 ### Preguntas de repaso y calidad general del documento (10 pts)
 
@@ -137,7 +137,7 @@ Cada sección se califica en 4 niveles de desempeño. El puntaje obtenido en cad
 | Entrega en un formato distinto a PDF | **0 puntos** (no se evalúa el contenido) |
 | Entrega fuera de la plataforma Google Classroom (correo, chat, enlace externo, etc.) | **0 puntos** (se considera no entregada) |
 | Entrega tardía (después de la fecha y hora límite fijada en Google Classroom) | Según política general del curso indicada en el syllabus — contactar al instructor **antes** de la fecha límite si existe una causa justificada |
-| Evidencia de recursos creados en un nivel de precio distinto al gratuito (`F1`, `Standard LRS`) sin justificación | -5 puntos sobre el total, independiente del resto de la evaluación |
+| Evidencia de recursos creados en un nivel de precio distinto al indicado como gratuito o de menor costo (`Standard LRS`, Automation con consumo fuera de los 500 minutos gratis, etc.) sin justificación | -5 puntos sobre el total, independiente del resto de la evaluación |
 | Capturas de pantalla ilegibles, recortadas o que no permiten verificar el paso solicitado | Se califica como si el paso no tuviera evidencia |
 | Indicios de que el Resource Group **no fue eliminado** al finalizar (buena práctica de higiene de laboratorio) | -3 puntos sobre el total |
 

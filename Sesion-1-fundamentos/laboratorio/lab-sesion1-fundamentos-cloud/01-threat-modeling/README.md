@@ -6,7 +6,7 @@
 
 ## 🎯 Objetivo de esta sección
 
-Construir un modelo de amenazas con la metodología **STRIDE** sobre el mismo escenario cloud que vas a desplegar en la [Sección 6](../06-managed-identity/README.md): una aplicación web que necesita leer datos de un almacenamiento y un secreto, sin usar contraseñas embebidas en el código.
+Construir un modelo de amenazas con la metodología **STRIDE** sobre el mismo escenario cloud que vas a desplegar en la [Sección 6](../06-managed-identity/README.md): un proceso automatizado (Runbook) que necesita leer datos de un almacenamiento y un secreto, sin usar contraseñas embebidas en el código.
 
 Hacer el modelo de amenazas **antes** de construir la arquitectura es intencional: en la teoría vimos que el threat modeling vive en la fase *Plan/Design*, antes de escribir código o desplegar infraestructura (*shift-left*). Al final del laboratorio (Sección 6) volverás a este modelo para comprobar que las mitigaciones que planteaste aquí realmente quedaron implementadas.
 
@@ -18,12 +18,12 @@ Vamos a modelar esta arquitectura simple:
 
 ```mermaid
 flowchart LR
-    U["👤 Usuario<br/>(navegador web)"]
-    A["⚙️ Aplicación Web<br/>(App Service)"]
+    U["👤 Operador<br/>(inicia el runbook)"]
+    A["⚙️ Runbook<br/>(Automation Account)"]
     S[("🗄️ Storage Account<br/>Blob")]
     K[("🔑 Key Vault<br/>Secretos")]
 
-    U -- "HTTPS" --> A
+    U -- "Ejecutar runbook<br/>(manual o programado)" --> A
     A -- "Managed Identity<br/>(sin contraseña)" --> S
     A -- "Managed Identity<br/>(sin contraseña)" --> K
 
@@ -38,12 +38,14 @@ flowchart LR
     end
 ```
 
-- **Usuario**: cualquier persona que abre la aplicación web desde su navegador. Es una *entidad externa* — está fuera de nuestro control.
-- **Aplicación Web (App Service)**: el *proceso* que recibe las peticiones del usuario y necesita leer un archivo del Storage Account y un secreto del Key Vault.
+- **Operador**: la persona (tú) que inicia la ejecución del runbook desde el Portal, o una programación (schedule) que lo dispara automáticamente. Es una *entidad externa* al proceso en sí — está fuera de nuestro control una vez lanzada la ejecución.
+- **Runbook (Automation Account)**: el *proceso* que se ejecuta y necesita leer un archivo del Storage Account y un secreto del Key Vault.
 - **Storage Account** y **Key Vault**: son *almacenes de datos*.
 - La línea entre "Internet" y "Azure" es una **frontera de confianza (trust boundary)**: todo lo que la cruza debe ser tratado con sospecha y verificado.
 
 > 💡 Este es exactamente el mismo diagrama que construirás con recursos reales en la Sección 6. Modelar la amenaza primero te permite decidir, con criterio, *por qué* usaremos una Managed Identity en lugar de una contraseña.
+>
+> 💡 Si tu instructor o tú preferís usar otro servicio de cómputo (por ejemplo, un App Service si tu suscripción sí tiene cuota disponible, o Azure Functions), el modelo de amenazas es el mismo: solo cambia el nombre del *proceso* en el diagrama. Lo que importa para STRIDE es que hay un proceso de cómputo con una identidad, no el servicio específico que lo ejecuta.
 
 ---
 
@@ -111,7 +113,7 @@ Se abrirá un lienzo en blanco con una barra de herramientas a la izquierda con 
 | Ícono | Elemento | Lo usamos para |
 |---|---|---|
 | Rectángulo redondeado | **Actor / Entidad externa** | El Usuario |
-| Círculo | **Proceso** | La Aplicación Web (App Service) |
+| Círculo | **Proceso** | El Runbook (Automation Account) |
 | Dos líneas horizontales | **Almacén de datos (Data Store)** | Storage Account y Key Vault |
 | Línea discontinua | **Trust boundary** | El límite entre Internet y Azure |
 | Flecha | **Data flow** | Las conexiones entre los elementos |
@@ -124,21 +126,21 @@ Reproduce el diagrama mostrado al inicio de esta sección dentro de Threat Drago
 
 ### ✅ 3.1 Agregar los elementos
 
-1. Arrastra un **Actor** al lienzo, en la parte izquierda. Haz doble clic y nómbralo `Usuario`.
-2. Arrastra un **Process** al centro del lienzo. Nómbralo `App Service`.
+1. Arrastra un **Actor** al lienzo, en la parte izquierda. Haz doble clic y nómbralo `Operador`.
+2. Arrastra un **Process** al centro del lienzo. Nómbralo `Runbook (Automation Account)`.
 3. Arrastra dos **Data Store** a la derecha. Nómbralos `Storage Account` y `Key Vault`.
 
 ### ✅ 3.2 Agregar la frontera de confianza
 
 1. Selecciona la herramienta **Trust Boundary** (línea discontinua).
-2. Dibuja una línea vertical **entre** el elemento `Usuario` y el elemento `App Service`.
+2. Dibuja una línea vertical **entre** el elemento `Operador` y el elemento `Runbook (Automation Account)`.
 3. Haz doble clic sobre la línea y nómbrala: `Internet <-> Azure`.
 
 ### ✅ 3.3 Conectar los flujos de datos
 
-1. Dibuja una flecha desde `Usuario` hacia `App Service`. Nómbrala `HTTPS request`.
-2. Dibuja una flecha desde `App Service` hacia `Storage Account`. Nómbrala `Lectura de blob (Managed Identity)`.
-3. Dibuja una flecha desde `App Service` hacia `Key Vault`. Nómbrala `Lectura de secreto (Managed Identity)`.
+1. Dibuja una flecha desde `Operador` hacia `Runbook (Automation Account)`. Nómbrala `Ejecutar runbook`.
+2. Dibuja una flecha desde `Runbook (Automation Account)` hacia `Storage Account`. Nómbrala `Lectura de blob (Managed Identity)`.
+3. Dibuja una flecha desde `Runbook (Automation Account)` hacia `Key Vault`. Nómbrala `Lectura de secreto (Managed Identity)`.
 
 ### 🧪 Checkpoint
 
@@ -158,12 +160,12 @@ Registra las siguientes 6 amenazas — una por cada letra de STRIDE — distribu
 
 | # | Elemento / Flujo | Tipo STRIDE | Título de la amenaza | Severidad | Mitigación a registrar |
 |---|---|---|---|---|---|
-| 1 | Flujo `HTTPS request` (Usuario → App Service) | **S**poofing | Suplantación del usuario mediante robo de sesión | Media | Forzar HTTPS/TLS y expiración de sesión |
-| 2 | Flujo `HTTPS request` | **T**ampering | Manipulación de parámetros en la petición | Media | Validación de entrada del lado del servidor |
-| 3 | Proceso `App Service` | **R**epudiation | El proceso no registra quién accedió a qué recurso | Baja | Habilitar logging de acceso (App Service logs) |
-| 4 | Flujo `App Service → Storage Account` | **I**nformation Disclosure | Credenciales de acceso al Storage expuestas en el código | **Alta** | **Usar Managed Identity en lugar de una cadena de conexión con clave** |
-| 5 | Flujo `App Service → Key Vault` | **I**nformation Disclosure | Secreto expuesto si se filtra una clave de acceso estática | **Alta** | **Usar Managed Identity + rol RBAC de solo lectura (Key Vault Secrets User)** |
-| 6 | Proceso `App Service` | **E**levation of Privilege | La identidad de la aplicación tiene más permisos de los necesarios | Media | Asignar roles RBAC mínimos (Least Privilege), nunca `Contributor` u `Owner` |
+| 1 | Flujo `Ejecutar runbook` (Operador → Runbook) | **S**poofing | Suplantación del operador mediante robo de credenciales de su cuenta | Media | MFA en la cuenta que puede iniciar el runbook (ver Sección 2) |
+| 2 | Flujo `Ejecutar runbook` | **T**ampering | Modificación no autorizada del código del runbook antes de ejecutarlo | Media | Control de versiones del runbook y permisos de edición restringidos |
+| 3 | Proceso `Runbook (Automation Account)` | **R**epudiation | No queda registro de qué ejecución del runbook accedió a qué recurso | Baja | Habilitar el historial de Jobs y los logs de diagnóstico de la Automation Account |
+| 4 | Flujo `Runbook → Storage Account` | **I**nformation Disclosure | Credenciales de acceso al Storage expuestas en el código del runbook | **Alta** | **Usar Managed Identity en lugar de una cadena de conexión con clave** |
+| 5 | Flujo `Runbook → Key Vault` | **I**nformation Disclosure | Secreto expuesto si se filtra una clave de acceso estática | **Alta** | **Usar Managed Identity + rol RBAC de solo lectura (Key Vault Secrets User)** |
+| 6 | Proceso `Runbook (Automation Account)` | **E**levation of Privilege | La identidad del runbook tiene más permisos de los necesarios | Media | Asignar roles RBAC mínimos (Least Privilege), nunca `Contributor` u `Owner` |
 
 > 💡 Fíjate en las amenazas #4 y #5: son exactamente el problema que la Managed Identity de la Sección 6 va a resolver. Estás modelando la amenaza *antes* de construir la mitigación — así es como debe funcionar el threat modeling en un flujo real de trabajo.
 
@@ -215,7 +217,7 @@ Captura de pantalla de la lista completa de amenazas (las 6, con su tipo y sever
 
 ## 🧠 Preguntas de repaso
 
-1. ¿Por qué el flujo `App Service → Storage Account` es más crítico (severidad Alta) que el flujo `Usuario → App Service`?
+1. ¿Por qué el flujo `Runbook → Storage Account` es más crítico (severidad Alta) que el flujo `Operador → Runbook`?
 2. ¿Qué principio de seguridad de la Sesión 1 (Least Privilege, Defense in Depth o Zero Trust) se aplica directamente al registrar el rol RBAC mínimo como mitigación de la amenaza de Elevation of Privilege?
 3. Si este fuera un sistema real en producción, ¿qué otro elemento agregarías al DFD para reflejar dónde vive el código fuente de la aplicación?
 

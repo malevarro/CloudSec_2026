@@ -74,7 +74,8 @@ En vez de navegar por menús, la forma más rápida de llegar a cualquier servic
 Para cada uno de los siguientes servicios, búscalo en el buscador global superior, ábrelo, y haz clic en la **estrella (☆)** que aparece junto a su nombre para agregarlo a tus **Favoritos** (la estrella se pondrá amarilla/dorada):
 
 - `Resource groups`
-- `App Services`
+- `App Services` (lo exploraremos conceptualmente en la Sección 5)
+- `Automation Accounts` (lo usaremos para construir la Managed Identity en la Sección 6)
 - `Storage accounts`
 - `Key vaults`
 - `Cost Management + Billing`
@@ -82,7 +83,7 @@ Para cada uno de los siguientes servicios, búscalo en el buscador global superi
 
 ### 🧪 Checkpoint
 
-En el menú lateral izquierdo, debajo de **Dashboard**, ahora debe aparecer una sección con los 6 servicios que marcaste, para acceso rápido durante el resto del laboratorio.
+En el menú lateral izquierdo, debajo de **Dashboard**, ahora debe aparecer una sección con los 7 servicios que marcaste, para acceso rápido durante el resto del laboratorio.
 
 ### 📸 Evidencia recomendada
 
@@ -152,7 +153,7 @@ Puedes ver el nombre de tu tenant y tu propio usuario listado en Entra ID.
 
 - [ ] Identificaste las 4 zonas principales del portal (barra superior, menú lateral, panel principal, buscador)
 - [ ] Personalizaste (o al menos abriste) un Dashboard
-- [ ] Marcaste como favoritos los 6 servicios que usarás en el resto del laboratorio
+- [ ] Marcaste como favoritos los 7 servicios que usarás en el resto del laboratorio
 - [ ] Abriste Cloud Shell y ejecutaste `az account show` exitosamente
 - [ ] Verificaste que el gasto acumulado es USD 0 en Cost Management
 - [ ] Ubicaste tu tenant y tu usuario en Microsoft Entra ID

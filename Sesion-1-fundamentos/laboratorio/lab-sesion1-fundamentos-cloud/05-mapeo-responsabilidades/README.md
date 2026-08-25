@@ -8,7 +8,9 @@
 
 Comparar, **dentro del propio Portal de Azure**, cuánta configuración de seguridad queda a tu cargo según elijas IaaS (Máquina Virtual), PaaS (App Service) o SaaS — completando tú mismo el diagrama de responsabilidad compartida con base en lo que observes.
 
-> 💡 En esta sección **exploraremos** los formularios de creación de una VM y de un App Service **sin completarlos** (los cancelaremos antes del último paso) — el objetivo es ver qué le exige Azure configurar al cliente en cada modelo, no desplegar la VM todavía. El App Service real lo crearemos en la Sección 6.
+> 💡 En esta sección **exploraremos** los formularios de creación de una VM y de un App Service **sin completarlos** (los cancelaremos antes del último paso) — el objetivo es ver qué le exige Azure configurar al cliente en cada modelo, no desplegar nada todavía.
+>
+> ⚠️ **Nota importante:** en la Sección 6 **no** usaremos el App Service para construir la Managed Identity, sino una **Azure Automation Account**. Esto se debe a que muchas suscripciones Azure Free Trial nuevas tienen actualmente la cuota de cómputo de App Service restringida a `0`, lo que impide crear incluso el nivel gratuito `F1`. Esta sección conserva la exploración del formulario de App Service porque el objetivo aquí es **puramente conceptual** (comparar qué le exige cada modelo al cliente) y no requiere crear el recurso — el ejercicio funciona igual sin importar qué servicio de cómputo termines usando en la práctica.
 
 ---
 
@@ -156,7 +158,7 @@ Vuelve al modelo de amenazas que creaste en la [Sección 1](../01-threat-modelin
 
 1. ¿Por qué el formulario de creación de una VM tiene más campos relacionados con seguridad de infraestructura que el de un App Service?
 2. Menciona dos configuraciones de seguridad que **siempre** seguirán siendo tu responsabilidad, sin importar si eliges IaaS, PaaS o SaaS.
-3. ¿Por qué elegimos App Service (PaaS) y no una VM (IaaS) para la Managed Identity de la Sección 6?
+3. La Sección 6 usa una Azure Automation Account en lugar de un App Service o una VM. ¿A cuál de los dos modelos (IaaS o PaaS) se parece más una Automation Account en términos de responsabilidad compartida? Justifica tu respuesta.
 
 ---
 
